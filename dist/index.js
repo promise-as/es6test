@@ -1,3 +1,5 @@
+"use strict";
+
 // let a = 2;
 // console.log(a);
 
@@ -39,10 +41,35 @@
 // console.log('arr2: ' + arr2);
 
 // 剩余运算符
-function foo(first, ...arg){
+function foo(first) {
+  for (var _len = arguments.length, arg = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+    arg[_key - 1] = arguments[_key];
+  }
+
   // console.log(arg.length);
-  for(let val of arg){ // 遍历
-    console.log(val);
+  var _iteratorNormalCompletion = true;
+  var _didIteratorError = false;
+  var _iteratorError = undefined;
+
+  try {
+    for (var _iterator = arg[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+      var val = _step.value;
+
+      console.log(val);
+    }
+  } catch (err) {
+    _didIteratorError = true;
+    _iteratorError = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion && _iterator.return) {
+        _iterator.return();
+      }
+    } finally {
+      if (_didIteratorError) {
+        throw _iteratorError;
+      }
+    }
   }
 }
-foo(1, 2, 3)
+foo(1, 2, 3);

@@ -1,3 +1,6 @@
 ## es6
 
-- 基于`Babel`开发
+- `cnpm i`
+- `cnpm i babel-cli -g`
+- `npm run build`
+
